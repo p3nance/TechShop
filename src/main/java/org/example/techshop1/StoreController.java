@@ -8,6 +8,7 @@ public class StoreController {
     @FXML private ListView<String> cartList;
     @FXML private Label totalLabel;
 
+    //Список товаров при запуске
     @FXML
     public void initialize() {
         productsList.getItems().addAll(
@@ -19,6 +20,7 @@ public class StoreController {
         );
     }
 
+    //Добавление товаров в корзину
     @FXML
     private void addToCart() {
         String selected = productsList.getSelectionModel().getSelectedItem();
@@ -28,13 +30,14 @@ public class StoreController {
         }
     }
 
+    //Очистка корзины
     @FXML
     private void clearCart() {
         cartList.getItems().clear();
         updateTotal();
     }
 
-
+    //Совершение покупки
     @FXML
     private void checkout() {
         if (!cartList.getItems().isEmpty()) {
@@ -48,6 +51,7 @@ public class StoreController {
         }
     }
 
+    //Подсчет корзины
     private void updateTotal() {
         double total = 0;
         for (String item : cartList.getItems()) {
