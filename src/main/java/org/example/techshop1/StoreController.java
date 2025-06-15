@@ -29,6 +29,13 @@ public class StoreController {
     }
 
     @FXML
+    private void clearCart() {
+        cartList.getItems().clear();
+        updateTotal();
+    }
+
+
+    @FXML
     private void checkout() {
         if (!cartList.getItems().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);

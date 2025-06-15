@@ -16,6 +16,8 @@
     <Label text="Ваша корзина:" style="-fx-font-weight: bold;"/>
     <ListView fx:id="cartList"/>
 
+
     <Label fx:id="totalLabel" text="Итого: 0 руб" style="-fx-font-weight: bold;"/>
+    <Button text="Очистить корзину" onAction="#clearCart"/>
     <Button text="Купить" onAction="#checkout"/>
 </VBox>
